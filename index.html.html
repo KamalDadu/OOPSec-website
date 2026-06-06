@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- حماية صارمة لمنع الاختراق وحقن الأكواد الخبيثة (Secure 100%) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>OOPSec | AI </title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        oopsec: {
+                            red: '#c90000',
+                            dark: '#030303',
+                            card: '#0a0a0c'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030303;
+            color: #e5e7eb;
+            background-image: 
+                linear-gradient(rgba(201, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 0, 0, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+        .code-font {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .page-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-oopsec-red selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="w-full border-b border-white/5 bg-oopsec-dark/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- الشعار يوجه للرئيسية -->
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="navigate('home')">
+                <div class="p-2 rounded bg-red-950/30 border border-red-900/50 shadow-[0_0_10px_rgba(201,0,0,0.2)] group-hover:border-oopsec-red transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c90000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-pulse"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black text-white tracking-widest code-font">
+                        OOP<span class="text-oopsec-red">Sec</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- أزرار التنقل الرئيسية -->
+            <div class="hidden md:flex gap-8 items-center text-sm font-bold code-font text-gray-400">
+                <button onclick="navigate('home')" class="hover:text-oopsec-red transition-colors nav-btn" id="nav-home">Home</button>
+                <button onclick="navigate('about')" class="hover:text-oopsec-red transition-colors nav-btn" id="nav-about">About Us</button>
+                <button onclick="navigate('vaultai')" class="hover:text-oopsec-red transition-colors nav-btn" id="nav-vaultai">VaultAI Platform</button>
+                <button onclick="navigate('contact')" class="hover:text-oopsec-red transition-colors nav-btn" id="nav-contact">Contact Us</button>
+            </div>
+
+            <!-- زر التواصل المباشر -->
+            <button onclick="navigate('contact')" class="px-5 py-2 text-xs font-bold text-white border border-oopsec-red/40 bg-oopsec-red/10 hover:bg-oopsec-red rounded transition-all duration-300">
+                Secure Your Enterprise
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        
+        <!-- ================= PAGE: HOME ================= -->
+        <section id="home" class="page-section page-active">
+            <header class="max-w-7xl mx-auto px-6 pt-24 pb-20 text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-oopsec-red/20 bg-oopsec-red/10 text-red-400 text-xs mb-8 code-font">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    <span>Secure AI</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white max-w-4xl mx-auto leading-tight md:leading-tight">
+                    Absolute Sovereignty with <span class="text-oopsec-red relative">
+                        100% Offline AI
+                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-oopsec-red to-transparent opacity-50"></span>
+                    </span>
+                </h1>
+                
+                <p class="mt-8 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    We build impenetrable, intelligent systems operating entirely within your closed networks. Engineered with strict Object-Oriented Principles to guarantee maximum performance and absolute confidentiality.
+                </p>
+
+                <!-- أزرار توجه لصفحة المنتج وصفحة التواصل -->
+                <div class="mt-10 flex flex-wrap justify-center gap-4">
+                    <button onclick="navigate('vaultai')" class="px-8 py-3 rounded bg-oopsec-red hover:bg-red-700 text-white font-bold transition-colors">
+                        Discover VaultAI
+                    </button>
+                    <button onclick="navigate('contact')" class="px-8 py-3 rounded bg-transparent border border-white/20 hover:border-white text-white font-bold transition-colors">
+                        Book a Consultation
+                    </button>
+                </div>
+            </header>
+        </section>
+
+        <!-- ================= PAGE: ABOUT US ================= -->
+        <section id="about" class="page-section">
+            <div class="max-w-5xl mx-auto px-6 pt-20 pb-20">
+                <h2 class="text-4xl font-bold text-white mb-8 border-b border-white/10 pb-4">About <span class="text-oopsec-red code-font">OOPSec</span></h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                            OOPSec is a specialized technology firm dedicated exclusively to the advancement of Artificial Intelligence and Cybersecurity. We focus on delivering cutting-edge, highly secure solutions tailored for modern enterprise needs.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                            Our core strength lies in our highly skilled and specialized team. Comprising experts in secure system architecture, AI deployment, and defensive security, we don't just patch software—we engineer digital fortresses from the ground up.
+                        </p>
+                        <div class="p-6 bg-oopsec-card border border-oopsec-red/20 rounded-xl mt-8">
+                            <h3 class="text-white font-bold mb-2">Our Mission</h3>
+                            <p class="text-sm text-gray-500">To empower enterprises, governments, and secure facilities with intelligent software solutions that guarantee absolute privacy and never require an external connection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex justify-center">
+                        <div class="w-64 h-64 border border-oopsec-red/20 rounded-full flex items-center justify-center p-8 shadow-[0_0_60px_rgba(201,0,0,0.1)] relative">
+                            <div class="w-48 h-48 border border-dashed border-oopsec-red/40 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]"></div>
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="w-32 h-32 border border-oopsec-red/60 rounded-full bg-[#050505] flex items-center justify-center shadow-inner">
+                                    <svg class="w-12 h-12 text-oopsec-red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: VAULTAI ================= -->
+        <section id="vaultai" class="page-section">
+            <div class="max-w-7xl mx-auto px-6 pt-20 pb-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">Our Flagship Solution</h2>
+                    <p class="text-gray-500 mt-3">The only platform you need for secure, offline artificial intelligence.</p>
+                </div>
+
+                <div class="p-10 bg-oopsec-card border border-oopsec-red/40 rounded-2xl shadow-[0_0_50px_rgba(201,0,0,0.15)] relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-oopsec-red/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+                        <div>
+                            <div class="flex items-center gap-2 text-oopsec-red code-font text-xs mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                <span>Proprietary Enterprise Software</span>
+                            </div>
+                            <h3 class="text-4xl font-extrabold text-white mb-6"><span class="text-oopsec-red code-font">VaultAI</span></h3>
+                            <p class="text-base text-gray-400 leading-relaxed mb-6">
+                                VaultAI is our exclusive, proprietary intelligent enterprise assistant. Powered by strictly controlled Local LLMs, it is designed from the core to analyze your most sensitive corporate documents and data environments entirely offline.
+                            </p>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <svg class="w-5 h-5 text-oopsec-red shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    <span><strong>100% On-Premise:</strong> Zero reliance on cloud APIs. Your data never leaves your physical servers.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <svg class="w-5 h-5 text-oopsec-red shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    <span><strong>Unmatched Privacy:</strong> Perfect for governmental, financial, and healthcare sectors with strict compliance requirements.</span>
+                                </li>
+                            </ul>
+                            <!-- زر يوجه لصفحة التواصل -->
+                            <button onclick="navigate('contact')" class="px-8 py-3 bg-oopsec-red hover:bg-red-700 text-white font-bold rounded transition-colors code-font shadow-lg">
+                                Request VaultAI Deployment
+                            </button>
+                        </div>
+
+                        <div class="bg-[#030303] border border-white/10 rounded-xl p-6 code-font text-xs text-green-400 shadow-2xl relative">
+                            <div class="absolute top-3 left-4 flex gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="pt-6">
+                                <p class="text-gray-500">// VaultAI Secure Initializer</p>
+                                <p class="mt-2"><span class="text-purple-400">#include</span> &lt;oopsec_vaultai_core.h&gt;</p>
+                                <p class="text-blue-400 mt-2">int <span class="text-yellow-200">main</span>() {</p>
+                                <p class="pl-4 text-gray-300">VaultEngine system;</p>
+                                <p class="pl-4 text-gray-500">// Enforce strict offline isolation</p>
+                                <p class="pl-4 text-gray-300">system.<span class="text-yellow-200">verify_air_gap</span>();</p>
+                                <p class="pl-4 text-emerald-400 mt-2">if (system.network_status == AIR_GAPPED) {</p>
+                                <p class="pl-8 text-white">system.<span class="text-yellow-200">load_local_llm</span>();</p>
+                                <p class="pl-8 text-gray-500">// Secure AI instance running...</p>
+                                <p class="pl-4">}</p>
+                                <p class="text-blue-400">}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: CONTACT US ================= -->
+        <section id="contact" class="page-section">
+            <div class="max-w-3xl mx-auto px-6 pt-20 pb-20 text-center">
+                <h2 class="text-4xl font-bold text-white mb-6">Deploy VaultAI Today</h2>
+                <p class="text-gray-400 mb-12">Connect directly with our engineering team to schedule a consultation and see how VaultAI can secure your enterprise.</p>
+                
+                <div class="bg-oopsec-card border border-white/10 rounded-xl p-8 shadow-2xl text-left relative overflow-hidden">
+                    <div class="absolute left-0 top-0 w-1 h-full bg-oopsec-red"></div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-white font-bold mb-4 text-lg">Direct Comm Link</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Phone / WhatsApp</p>
+                                    <!-- رابط يتصل بالرقم فوراً -->
+                                    <a href="tel:+962796985268" class="text-gray-300 code-font hover:text-oopsec-red transition-colors text-sm">+962 79 698 5268</a>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Email Support</p>
+                                    <!-- رابط يفتح تطبيق الإيميل فوراً -->
+                                    <a href="mailto:" class="text-gray-300 code-font hover:text-oopsec-red transition-colors text-sm break-all">support@oopsec.tech</a>
+                                </div>
+                            </div>
+                            
+                            <!-- زر يفتح تطبيق الإيميل فوراً -->
+                            <a href="mailto:support@oopsec.tech" class="inline-block mt-8 px-6 py-2 bg-oopsec-red text-white font-bold rounded text-sm hover:bg-red-700 transition-colors code-font shadow-md">
+                                Email Us Now
+                            </a>
+                        </div>
+                        <div class="bg-[#030303] border border-white/5 p-6 rounded-lg flex flex-col justify-center items-center text-center">
+                            <svg class="w-12 h-12 text-gray-600 mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <p class="text-sm text-gray-400">Secure consultation lines are available exclusively for enterprise clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-6 bg-oopsec-dark text-center mt-auto">
+        <p class="text-xs text-gray-600 code-font">
+            &copy; 2026 OOPSec LLC. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- سكربت التحكم بالصفحات -->
+    <script>
+        function navigate(pageId) {
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => {
+                page.classList.remove('page-active');
+            });
+
+            const activePage = document.getElementById(pageId);
+            if(activePage) {
+                activePage.classList.add('page-active');
+            }
+
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('text-oopsec-red');
+                btn.classList.add('text-gray-400');
+            });
+            const activeBtn = document.getElementById('nav-' + pageId);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-gray-400');
+                activeBtn.classList.add('text-oopsec-red');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            navigate('home');
+        });
+    </script>
+</body>
+</html>
